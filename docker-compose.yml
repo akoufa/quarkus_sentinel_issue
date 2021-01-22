@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  redis:
+    image: 'redis:latest'
+    ports:
+      - '6379:6379'
+  redis-sentinel:
+    image: 'bitnami/redis-sentinel:latest'
+    environment:
+      - REDIS_MASTER_HOST=redis
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '26379:26379'

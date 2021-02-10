@@ -7,7 +7,7 @@ services:
   redis-sentinel:
     image: 'bitnami/redis-sentinel:latest'
     environment:
-      - REDIS_MASTER_HOST=redis
+      - REDIS_MASTER_HOST=localhost
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
       - '26379:26379'
